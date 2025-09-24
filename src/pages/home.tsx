@@ -1,7 +1,7 @@
 export default function HomePage() {
   return (
     <div
-      className="h-screen w-full flex flex-col items-center justify-center px-4 bg-cover bg-center bg-no-repeat gap-32"
+      className="h-screen w-full flex flex-col items-center justify-center px-4 bg-cover bg-center bg-no-repeat gap-32 font-segoe"
       style={{
         backgroundImage: "url('/bahasha-bg.png')",
       }}
