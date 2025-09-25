@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { ArrowLeft, ArrowRight, ChevronUp, ChevronDown } from "lucide-react";
 
 export default function Category() {
   const [expanded, setExpanded] = useState(false);
+  const navigate = useNavigate();
 
   const baseCategories = [
     "Tithe",
@@ -31,7 +33,10 @@ export default function Category() {
             className="w-8 h-8 mb-8"
           />
           <h2 className="text-black text-[20px]">Zetech University</h2>
-          <ArrowLeft className="w-5 h-5 text-black mt-16 mb-6 cursor-pointer" />
+          <ArrowLeft
+            className="w-5 h-5 text-black mt-16 mb-6 cursor-pointer"
+            onClick={() => navigate("/")}
+          />
         </div>
       )}
 
@@ -53,6 +58,7 @@ export default function Category() {
                 width: "50%",
                 transform: "skewY(25deg)",
                 transformOrigin: "top left",
+                boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
               }}
             ></div>
 
@@ -63,6 +69,7 @@ export default function Category() {
                 width: "50%",
                 transform: "skewY(-25deg)",
                 transformOrigin: "top right",
+                boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
               }}
             ></div>
           </div>
@@ -88,7 +95,7 @@ export default function Category() {
             onClick={() => setExpanded(!expanded)}
           >
             <span className="text-[16px]">
-              {expanded ? "Less categories option" : "More categories"}
+              {expanded ? "Less category options" : "More category options"}
             </span>
             {expanded ? (
               <ChevronDown className="w-5 h-5 cursor-pointer" />
@@ -100,8 +107,16 @@ export default function Category() {
 
         {/* Bottom Navigation */}
         <div className="w-full text-[#CE9A5B] flex items-center justify-between mt-auto relative z-10">
-          <button className="text-[16px] font-medium">Next</button>
-          <ArrowRight className="w-5 h-5 cursor-pointer text-[#CE9A5B]" />
+          <button
+            className="text-[16px] font-medium"
+            onClick={() => navigate("/give")}
+          >
+            Next
+          </button>
+          <ArrowRight
+            className="w-5 h-5 cursor-pointer text-[#CE9A5B]"
+            onClick={() => navigate("/give")}
+          />
         </div>
       </div>
     </div>
