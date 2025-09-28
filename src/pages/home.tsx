@@ -1,4 +1,7 @@
-export default function HomePage() {
+import { useNavigate } from "react-router-dom";
+
+export default function Home() {
+  const navigate = useNavigate();
   return (
     <div
       className="h-screen w-full flex flex-col items-center justify-center px-4 bg-cover bg-center bg-no-repeat gap-32 font-segoe"
@@ -11,7 +14,7 @@ export default function HomePage() {
         <h1 className="text-white text-xl font-normal">Bahasha</h1>
 
         {/* Subtitle */}
-        <p className="text-[#cfcfcf] text-md font-light mt-2">
+        <p className="text-[#cfcfcf] text-sm font-light mt-2">
           Give anywhere, anytime
         </p>
       </div>
@@ -21,13 +24,15 @@ export default function HomePage() {
         <input
           type="text"
           placeholder="church name or code"
-          className="w-full rounded-full py-3.5 pr-12 pl-8 text-md italic placeholder-[#919191] text-[#919191] bg-[#FFFFFF] outline-none"
+          className="w-full rounded-full py-3.5 pr-12 pl-8 text-sm italic placeholder-[#919191] text-[#919191] bg-[#FFFFFF] outline-none cursor-pointer"
+          onClick={() => navigate("/category")}
         />
         {/* Right search icon */}
         <img
           src="/search.png"
           alt="search"
-          className="absolute right-10 top-1/2 -translate-y-1/2 w-5 h-5"
+          className="absolute right-10 top-1/2 -translate-y-1/2 w-4 h-4 cursor-pointer"
+          onClick={() => navigate("/category")}
         />
       </div>
     </div>

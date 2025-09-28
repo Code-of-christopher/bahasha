@@ -30,9 +30,9 @@ export default function Category() {
           <img
             src="/churchlogo.png"
             alt="Church Logo"
-            className="w-8 h-8 mb-8"
+            className="w-7 h-7 mb-5"
           />
-          <h2 className="text-black text-lg">Zetech University</h2>
+          <h2 className="text-black text-md">Zetech University</h2>
           <ArrowLeft
             className="w-5 h-5 text-black mt-16 mb-6 cursor-pointer"
             onClick={() => navigate("/")}
@@ -53,7 +53,7 @@ export default function Category() {
           <div className="absolute top-0 left-0 w-full h-44 pointer-events-none">
             {/* Left diagonal */}
             <div
-              className="absolute top-0 left-0 border-t-2 border-[#00000029]"
+              className="absolute top-0 left-0 border-t-2 border-[#00000015]"
               style={{
                 width: "50%",
                 transform: "skewY(25deg)",
@@ -63,7 +63,7 @@ export default function Category() {
 
             {/* Right diagonal */}
             <div
-              className="absolute top-0 right-0 border-t-2 border-[#00000029]"
+              className="absolute top-0 right-0 border-t-2 border-[#00000015]"
               style={{
                 width: "50%",
                 transform: "skewY(-25deg)",
@@ -82,7 +82,7 @@ export default function Category() {
               <input
                 type="text"
                 placeholder={label}
-                className="w-full bg-transparent text-black placeholder:italic placeholder-[#919191] text-md pt-4 pb-1 focus:outline-none"
+                className="w-full bg-transparent text-black placeholder:italic placeholder-[#919191] text-sm placeholder:font-light pt-4 pb-1 focus:outline-none"
               />
             </div>
           ))}
@@ -92,7 +92,7 @@ export default function Category() {
             className="flex items-center justify-between text-[#919191] italic cursor-pointer pt-10"
             onClick={() => setExpanded(!expanded)}
           >
-            <span className="text-md">
+            <span className="text-sm font-light">
               {expanded ? "Less category options" : "More category options"}
             </span>
             {expanded ? (
@@ -104,9 +104,9 @@ export default function Category() {
         </form>
 
         {/* Bottom Navigation */}
-        <div className="w-full text-[#CE9A5B] flex items-center justify-between mt-auto relative z-10">
+        <div className="w-full text-[#CE9A5B] flex items-center justify-between mt-24 relative z-10">
           <button
-            className="text-md font-medium"
+            className="text-sm"
             onClick={() => navigate("/give")}
           >
             Next
